@@ -2,6 +2,34 @@ pipeline{
     options {
         buildDiscarder(logRotator(numToKeepStr: '5', artifactNumToKeepStr: '5'))
     }
+    agent any
+
+    stages{
+        stage('pull from scm'){
+            steps{
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], 
+                doGenerateSubmoduleConfigurations: false, 
+                extensions: [], 
+                submoduleCfg: [], 
+                userRemoteConfigs: [[url: 'https://github.com/armelsteve/developer.git']]])
+            }
+        }
+
+        stage('build iamge'){
+            steps{
+                sh"""
+                    docker build -t app:1.0 .
+                """
+            }
+        }
+        stage('show image'){
+            steps{
+                sh""" docker images """
+            }
+        }
+
+
+    }
     post{
         success{
             deleteDir()
