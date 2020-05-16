@@ -17,14 +17,20 @@ pipeline{
 
         stage('build iamge'){
             steps{
-                sh"""
-                    docker build -t app:1.0 .
-                """
+                dir("${WORKSPACE}/jobs/OPS_create_docker_img"){
+                    sh"""
+                        docker build -t app:1.0 .
+                     """
+            }
+
             }
         }
         stage('show image'){
             steps{
+                dir("${WORKSPACE}/jobs/OPS_create_docker_img"){
                 sh""" docker images """
+            }
+
             }
         }
 
