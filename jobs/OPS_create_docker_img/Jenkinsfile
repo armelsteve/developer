@@ -1,0 +1,19 @@
+pipeline{
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '5', artifactNumToKeepStr: '5'))
+    }
+    post{
+        success{
+            deleteDir()
+        }
+        failure{
+            deleteDir()
+        }
+        aborted{
+            deleteDir()
+        }
+        unstable{
+            deleteDir()
+        }
+    }
+}
