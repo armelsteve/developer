@@ -15,20 +15,27 @@ pipeline{
             }
         }
 
-        stage('build iamge'){
+        stage('copy files to ec2 instance'){
             steps{
                 dir("${WORKSPACE}/jobs/OPS_create_docker_img"){
-                    sh"""
-                        docker build -t app:1.0 .
-                     """
+                    sshagent(['ec2']) {
+                             sh """ scp -o StrictHostKeyChecking=no index.html Dockerfile ec2-user@3.88.52.41:/home/ec2-user/dockerfiles/ """
+
+                        }
             }
 
             }
         }
-        stage('show image'){
+        stage('build image'){
             steps{
                 dir("${WORKSPACE}/jobs/OPS_create_docker_img"){
-                sh""" docker images """
+                    sshagent(['ec2']) {
+                        sh """
+                            ssh -o StrictHostKeyChecking=no ec2-user@3.88.52.41 docker build -t app:1.0 .
+                            ssh -o StrictHostKeyChecking=no ec2-user@3.88.52.41 docker images
+                            ssh -o StrictHostKeyChecking=no ec2-user@3.88.52.41 docker run --name apache -p 5000:80 -d app
+                        """
+                    }
             }
 
             }
