@@ -31,9 +31,9 @@ pipeline{
                 dir("${WORKSPACE}/jobs/OPS_create_docker_img"){
                     sshagent(['ec2']) {
                         sh """
-                            ssh -o StrictHostKeyChecking=no ec2-user@3.88.52.41 cd /home/ec2-user/dockerfiles/ && docker build -t app:1.0 .
+                            ssh -o StrictHostKeyChecking=no ec2-user@3.88.52.41 cd /home/ec2-user/dockerfiles
                             ssh -o StrictHostKeyChecking=no ec2-user@3.88.52.41 docker images
-                            ssh -o StrictHostKeyChecking=no ec2-user@3.88.52.41 docker run -it --name apache -p 5000:80 -d app
+                            //ssh -o StrictHostKeyChecking=no ec2-user@3.88.52.41 docker run -it --name apache -p 5000:80 -d app
                         """
                     }
             }
