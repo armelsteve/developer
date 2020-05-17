@@ -20,7 +20,6 @@ pipeline{
                 dir("${WORKSPACE}/jobs/OPS_create_docker_img"){
                     sshagent(['ec2']) {
                              sh """ scp -o StrictHostKeyChecking=no  Dockerfile ec2-user@52.205.227.25:/home/ec2-user 
-                                    ssh -o StrictHostKeyChecking=no ec2-user@52.205.227.25 ls -la | grep index.html
                                     ssh -o StrictHostKeyChecking=no ec2-user@52.205.227.25 ls -la | grep Dockerfile
                              """
 
