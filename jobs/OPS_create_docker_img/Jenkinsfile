@@ -14,22 +14,14 @@ pipeline{
                 userRemoteConfigs: [[url: 'https://github.com/armelsteve/developer.git']]])
             }
         }
-        stage('removing existing image'){
-            steps{
-                sshagent(['ec2']) {
-                    sh """
-                        ssh -o StrictHostKeyChecking=no ec2-user@52.205.227.25 docker rmi -f $(docker images -q)
-                        ssh -o StrictHostKeyChecking=no ec2-user@52.205.227.25 docker rm -f $(docker ps -a -q)
-                    """
-                }
-            }
-        }
 
         stage('copy files to ec2 instance'){
             steps{
                 dir("${WORKSPACE}/jobs/OPS_create_docker_img"){
                     sshagent(['ec2']) {
                              sh """
+                                    ssh -o StrictHostKeyChecking=no ec2-user@52.205.227.25 docker rmi -f $(docker images -q)
+                                    ssh -o StrictHostKeyChecking=no ec2-user@52.205.227.25 docker rm -f $(docker ps -a -q)
                                     scp -o StrictHostKeyChecking=no  Dockerfile ec2-user@52.205.227.25:/home/ec2-user 
                                     ssh -o StrictHostKeyChecking=no ec2-user@52.205.227.25 ls -la | grep Dockerfile
                              """
