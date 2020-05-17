@@ -17,6 +17,7 @@ pipeline{
         stage('remove existing containers'){
             steps{
                 sshagent(['ec2']){
+                    dir("${WORKSPACE}/jobs/OPS_create_docker_img"){
 
                     sh """
                        
@@ -24,6 +25,8 @@ pipeline{
         
                         ssh -o StrictHostKeyChecking=no ec2-user@52.205.227.25 docker rm -f $(docker ps -a -q)
                     """
+                }
+
                 }
             }
         }
