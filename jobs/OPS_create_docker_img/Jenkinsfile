@@ -36,7 +36,7 @@ pipeline{
                         sh """
                             ssh -o StrictHostKeyChecking=no ec2-user@3.88.52.41 docker build -t app:1.0 .
                             ssh -o StrictHostKeyChecking=no ec2-user@3.88.52.41 docker images
-                            
+                            ssh -o StrictHostKeyChecking=no ec2-user@3.88.52.41 docker run -p 80:80 -d app:1.0                   
                         """
                     }
             }
