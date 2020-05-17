@@ -17,10 +17,11 @@ pipeline{
         stage('remove existing containers'){
             steps{
                 sshagent(['ec2']){
+
                     sh """
-                        echo 'removing existing images'
+                       
                         ssh -o StrictHostKeyChecking=no ec2-user@52.205.227.25 docker rmi -f $(docker images -q)
-                        echo 'removing running containers'
+        
                         ssh -o StrictHostKeyChecking=no ec2-user@52.205.227.25 docker rm -f $(docker ps -a -q)
                     """
                 }
