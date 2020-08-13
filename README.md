@@ -27,3 +27,11 @@ bool(empty)= False ---> bool(0), bool(None), bool([]), bool(()), bool({})
 bool(non-empty)= True ---> bool(1)
 =====================================
 Any data type can be converted into a string but reverse not always true 
+
+# print format example
+print("{} {} {}".format(v1,v2,v3))
+print("{} \n{} \n{}".format(v1,v2,v3))
+
+# eval function
+x=eval(input("Enter x: "))
+type(x)
