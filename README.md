@@ -35,3 +35,10 @@ print("{} \n{} \n{}".format(v1,v2,v3))
 # eval function
 x=eval(input("Enter x: "))
 type(x)
+
+# time module use for sleep
+import time
+time.sleep(4) in second 
+
+# checking number of column linux
+tput cols
