@@ -42,3 +42,7 @@ time.sleep(4) in second
 
 # checking number of column linux
 tput cols
+
+# working with file use os module
+import os
+dir(os)
