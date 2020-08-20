@@ -11,5 +11,6 @@ with open(file,"r") as f:
         list.append(f"{i[0]} {i[1]}")
 
 with open(new_file,"w",newline='') as w:
-    data2 = csv.writer(w,delimiter=",")
-    data2.writerows(list)
+    data2 = csv.writer(w)
+    for x in list:
+        data2.writerow(x)
