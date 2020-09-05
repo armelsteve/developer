@@ -46,3 +46,15 @@ tput cols
 # working with file use os module
 import os
 dir(os)
+
+# Rule to create a pattern
+- a,x,9 - ordinary characters that matches themselves
+- [abc] - matches a or b or c
+- [a-c] - matches a or b or c
+- [a-zA-Z0-9] - matches any letter from (a to z) or (A to Z) or (0 to 9)
+- \w - matches any single letter, digit or underscore
+- \W - matches any character not part of \w
+- \d - matches decimal digit 0-9
+- . - matches any single character except newline character 
+
+# rstrip() method 

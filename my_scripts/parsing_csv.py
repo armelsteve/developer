@@ -9,8 +9,8 @@ with open(file,"r") as f:
     data = csv.reader(f)
     for i in data:
         list.append(f"{i[0]} {i[1]}")
-
-with open(new_file,"w",newline='') as w:
-    data2 = csv.writer(w)
-    for x in list:
-        data2.writerow(x)
+    with open(new_file,"w",newline='') as w:
+        data2 = csv.writer(w)
+        for x in list:
+            new=str(data2.writerow(x))
+            new.split()
