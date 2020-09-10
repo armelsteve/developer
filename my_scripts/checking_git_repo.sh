@@ -14,7 +14,8 @@ then
         echo "Nothing to do!!!"
 fi
 
-#elif [[ $(git rev-parse --abbrev-ref HEAD) ]]
-#echo "You are in the $(git rev-parse --abbrev-ref HEAD) branch"
+echo "You are in $(git rev-parse --abbrev-ref HEAD) branch"
+
+
 
 
