@@ -3,6 +3,7 @@
 
 #checking if the repo was updated or not
 
+git status -uno
 
 if [[ $? == 0 ]]
 then
