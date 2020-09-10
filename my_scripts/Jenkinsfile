@@ -1,0 +1,35 @@
+pipeline{
+
+agent {
+     label 'master'
+   }
+   stages {
+       stage('pulldev') {
+         steps {
+              git branch: 'master', credentialsId: '2e849fcb-528e-4bcb-8d83-e1c141e21dac', url: 'https://github.com/julessaurel/jenkins-pipeline-examples'
+         }
+       }
+     stage('build') {
+         steps {
+            echo 'building..'
+
+         }
+     }
+     stage('check changes') {
+         steps {
+            sh '''#!/bin/bash
+                chmod +x /Users/tamegj01/.jenkins/test_run.sh
+                 ./Users/tamegj01/.jenkins/test_run.sh
+            
+             '''
+         }
+     }
+
+     stage('test') {
+         steps {
+            echo 'testing..'
+
+         }
+       }
+    }
+}
