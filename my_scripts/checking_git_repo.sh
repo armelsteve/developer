@@ -3,16 +3,21 @@
 
 #checking if the repo was updated or not
 
-git status -uno
+UPSTREAM=${1:-'@{u}'}
+LOCAL=$(git rev-parse @)
+REMOTE=$(git rev-parse "$UPSTREAM")
+BASE=$(git merge-base @ "$UPSTREAM")
 
-if [[ $? == 0 ]]
-then
-            git add .
-            git commit -m "message"
-            git push
+if [ $LOCAL = $REMOTE ]; then
+    echo "Up-to-date"
+elif [ $LOCAL = $BASE ]; then
+    echo "Need to pull"
+elif [ $REMOTE = $BASE ]; then
+    echo "Need to push"
+else
+    echo "Diverged"
 fi
 
-echo "You are in $(git rev-parse --abbrev-ref HEAD) branch"
 
 
 
