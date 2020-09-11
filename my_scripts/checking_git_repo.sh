@@ -3,22 +3,6 @@
 
 #checking if the repo was updated or not
 
-UPSTREAM=${1:-'@{u}'}
-LOCAL=$(git rev-parse @)
-REMOTE=$(git rev-parse "$UPSTREAM")
-BASE=$(git merge-base @ "$UPSTREAM")
+script=`git status -uno | grep -i "nothing to commit" | awk '{print $1 " "  $2 " " $3}'`
 
-if [ $LOCAL = $REMOTE ]; then
-    echo "Up-to-date"
-elif [ $LOCAL = $BASE ]; then
-    echo "Need to pull"
-elif [ $REMOTE = $BASE ]; then
-    echo "Need to push"
-else
-    echo "Diverged"
-fi
-
-
-
-
-
+printf "$script"
