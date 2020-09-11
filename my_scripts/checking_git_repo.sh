@@ -8,7 +8,7 @@ script=`git status -uno | grep -i "nothing to commit" | awk '{print $1 " "  $2 "
 if [[ $script == "nothing to commit" ]]
 then
     echo "There is nothing to do"
-    exit 1
+    exit 0
 fi
 
 echo "Hello"
