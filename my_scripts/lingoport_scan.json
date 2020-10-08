@@ -1,0 +1,50 @@
+{
+    "Kronos.ETS.EDAP_Globalizer:scan": {
+        "lngprt-gyzr-rules-concatenations": "302",
+        "lngprt-gyzr-rules-embedded-strings": "193",
+        "lngprt-gyzr-rules-locale-sensitive-methods": "100",
+        "lngprt-gyzr-rules-general-patterns": "57",
+        "lngprt-gyzr-rules-static-files": "5",
+        "CRITICAL": 365,
+        "MAJOR": 161,
+        "MINOR": 131,
+        "INFO": 0,
+        "BLOCKER": 0
+    },
+    "Kronos.ETS.Gaming_Globalizer:scan": {
+        "lngprt-gyzr-rules-concatenations": "484",
+        "lngprt-gyzr-rules-embedded-strings": "106",
+        "lngprt-gyzr-rules-locale-sensitive-methods": "200",
+        "lngprt-gyzr-rules-general-patterns": "19",
+        "lngprt-gyzr-rules-static-files": "3",
+        "CRITICAL": 558,
+        "MAJOR": 208,
+        "MINOR": 46,
+        "INFO": 0,
+        "BLOCKER": 0
+    },
+    "Kronos.ETS.Outlook_Globalizer:scan": {
+        "lngprt-gyzr-rules-concatenations": "27",
+        "lngprt-gyzr-rules-embedded-strings": "185",
+        "lngprt-gyzr-rules-locale-sensitive-methods": "114",
+        "lngprt-gyzr-rules-general-patterns": "12",
+        "lngprt-gyzr-rules-static-files": "51",
+        "MAJOR": 221,
+        "MINOR": 109,
+        "CRITICAL": 59,
+        "INFO": 0,
+        "BLOCKER": 0
+    },
+    "Kronos.ETS.teams-chatbot_Globalizer:scan": {
+        "lngprt-gyzr-rules-concatenations": "0",
+        "lngprt-gyzr-rules-embedded-strings": "0",
+        "lngprt-gyzr-rules-locale-sensitive-methods": "0",
+        "lngprt-gyzr-rules-general-patterns": "0",
+        "lngprt-gyzr-rules-static-files": "0",
+        "INFO": 0,
+        "MINOR": 0,
+        "MAJOR": 0,
+        "CRITICAL": 0,
+        "BLOCKER": 0
+    }
+}
