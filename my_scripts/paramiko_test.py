@@ -6,8 +6,8 @@ import paramiko
 #for i in host:
 ssh = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-ssh.connect(hostname='armelCentos.int.kronos.com',port=22,username='root',password='XpAdmin!29')
-stdin,stdout,stderr=ssh.exec_command('free -m')
+ssh.connect(hostname='armelCentos.int.kronos.com',port=22,username='armel',password='Pass123!')
+stdin,stdout,stderr=ssh.exec_command('uname -r \n whoami')
 
 stdout=stdout.readlines()
 
@@ -17,3 +17,4 @@ for i in stdout:
 
 #print("The error is: ")
 #rint(stderr.readlines())
+ssh.close()
