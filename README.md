@@ -58,3 +58,8 @@ dir(os)
 - . - matches any single character except newline character 
 
 # rstrip() method 
+
+# to avoid docker container to always restart
+add --restart=always
+
+# for jenkins install job dsl and pipeline plugins 
