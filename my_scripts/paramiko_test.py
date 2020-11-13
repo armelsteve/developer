@@ -1,19 +1,21 @@
 #!/usr/bin/python
 import paramiko
 
-#host=['dcs-cron-bot.int.kronos.com','armelCentos.int.kronos.co']
-
-#for i in host:
+host = input("Enter hostname: ")
+username = input("Enter username: ")
+password = input("Your password: ")
 ssh = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-ssh.connect(hostname='armelCentos.int.kronos.com',port=22,username='armel',password='Pass123!')
-stdin,stdout,stderr=ssh.exec_command('uname -r \n whoami')
+ssh.connect(hostname=host,port=22,username=username,password=password)
+stdin,stdout,stderr=ssh.exec_command('pwd \n cat text.json') 
 
 stdout=stdout.readlines()
 
+#print(stdout)
 for i in stdout:
     print(i)
 #print(stdout.readlines())
+
 
 #print("The error is: ")
 #rint(stderr.readlines())

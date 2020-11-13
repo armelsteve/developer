@@ -6,7 +6,11 @@ with open('text.json') as f:
 #data['firstName'] = 'Jeff'
 print(data.get('firstName'))
 phone_number = data['phoneNumbers']
-#print(type(phone_number), phone_number)
+print(type(phone_number))
+
+the_address = data['address']
+print(type(the_address), the_address)
+print(the_address['state'])
 
 for i in phone_number:
     if i['type'] == 'cell':
