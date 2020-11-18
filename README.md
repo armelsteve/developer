@@ -63,3 +63,7 @@ dir(os)
 add --restart=always
 
 # for jenkins install job dsl and pipeline plugins 
+
+# json load() method loads a file
+
+# json loads() method loads a string
