@@ -1,22 +1,23 @@
 #!/usr/bin/python
 import paramiko
 
-host = input("Enter hostname: ")
-username = input("Enter username: ")
-password = input("Your password: ")
-ssh = paramiko.SSHClient()
-ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-ssh.connect(hostname=host,port=22,username=username,password=password)
-stdin,stdout,stderr=ssh.exec_command('pwd \n cat text.json') 
+username = 
+password = 
 
-stdout=stdout.readlines()
+devices = ['10.48.177.134','10.48.176.204']
 
-#print(stdout)
-for i in stdout:
-    print(i)
-#print(stdout.readlines())
+for device in devices:
+    ssh = paramiko.SSHClient()
+    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    ssh.connect(device,port=22,username=username,password=password)
+    stdin,stdout,stderr=ssh.exec_command('uname -r') 
+
+    output=stdout.readlines()
+
+    for i in output:
+        print(i)
 
 
-#print("The error is: ")
-#rint(stderr.readlines())
+    #print("The error is: ")
+    #print(stderr.readlines())
 ssh.close()
