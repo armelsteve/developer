@@ -67,3 +67,5 @@ add --restart=always
 # json load() method loads a file
 
 # json loads() method loads a string
+
+# To send email locally use: python3 -m smtpd -c DebuggingServer -n localhost:1025
