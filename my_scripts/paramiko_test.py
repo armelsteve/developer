@@ -3,7 +3,7 @@ import paramiko
 import smtplib
 
 username = 'root'
-password = 'XpAdmin!29'
+password = ''
 
 devices = ['10.48.177.134','10.48.176.204']
 

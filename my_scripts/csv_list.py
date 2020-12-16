@@ -11,4 +11,4 @@ with open('protagonist.csv', 'w') as w:
 with open('protagonist.csv', 'r') as f:
     read = csv.reader(f)
     for i in read:
-        print(i[0],i[1])
+        print(i)
