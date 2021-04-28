@@ -111,10 +111,25 @@ myMethod(myclosure)
 //List
 def fruits = ["Apples", "Oranges", "Grapes"]
 
+for (i in fruits){
+    println i
+}
+
+fruits.each { i ->
+    println "$i"
+}
+
+fruits.eachWithIndex { x, i ->
+    println "$i) $x"
+}
+
 println fruits[1]
 println fruits.get(2)
 
+//date
 def d = new Date()
-
 println d.hours+":"+d.minutes
+
+mylist = fruits.isEmpty()
+println mylist
 

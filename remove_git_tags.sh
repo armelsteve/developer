@@ -8,7 +8,7 @@ do
 	then
 		if [ $i != "release" ]
 		then
-					git push --delete origin $i
+					git push -d origin $i
 				fi
 			fi
 done
